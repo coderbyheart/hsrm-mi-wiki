@@ -1,0 +1,157 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[german]{babel}     %% ich schreibe in Deutsch
+\usepackage[utf8]{inputenc}    %% im Zeichensatz utf8
+\usepackage[T1]{fontenc}       %% damit die Trennung in deutsch funktioniert
+\usepackage{hsrmlogo}          %% das Hochschul-Logo, fast...
+\usepackage{verbatim}          %% Anzeigen von Dateien wie eingelesen
+% \usepackage{mathptmx}          %% Postscript Times New Roman Zeichensatz
+\usepackage{cmlgc}             %% Type 1 fonts
+
+%%% Das Seitenlayout
+\setlength{\textwidth}{166mm}
+\setlength{\textheight}{210mm}
+\setlength{\topmargin}{0mm}
+\setlength{\headsep}{10mm}
+\setlength{\oddsidemargin}{-6mm}  % Rand aller Seiten einseitig
+% Die Kopfzeilen und Fusszeilen 
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}           % darf erst nach den \setlength Kommandos kommen
+\addtolength{\headheight}{5ex} % damit man zwei Zeilen gut unterbringt
+\fancyhead[L]{{\sf Hochschule \\ RheinMain}}
+\fancyhead[CC]{                  % das HSRM-Logo oben in der Mitte
+  \parbox[b]{24pt}{\hsrmlogo[0.5]}
+}
+\fancyhead[R]{{\sf \LaTeX\--Einführung \\ WS 11/12}} 
+\fancyfoot[L]{{\sf Prof.\ Dr.\ Peter Barth \\ Fachbereich Design Informatik Medien}} 
+\fancyfoot[C]{\ }
+\fancyfoot[R]{{\sf \thepage \\ Medieninformatik}} 
+
+\begin{document}
+\begin{center}
+\large\bf Einführung in \LaTeX,
+27.10.11, 10:00 Uhr, Raum 14
+\end{center}
+
+\begin{minipage}{86mm}
+\begin{abstract}
+Bachelor- oder Seminararbeit schreiben und keine Krise 
+kurz vor der Abgabe haben? 
+Professionelles Layout und das alles 
+ganz automatisch?
+\LaTeX\ ist Ihre Wahl.
+\end{abstract}
+
+\section{Warum \LaTeX}
+
+\subsection{Dokumente im Buchdruckqualität}
+
+Das von Donald E. Knuth~\cite{bib:Knuth91} entwickelte
+Programm \TeX\ ist das leistungsfähigste Programm
+zur professionellen Erstellung wissenschaftlicher
+und technischer Texte wie Bachelor-Arbeiten und 
+Seminararbeiten.
+
+Das auf \TeX\ basierende Paket \LaTeX\ erlaubt es Autoren 
+sich auf die Inhalte zu konzentrieren.
+Im Gegensatz zu WYSIWYG\footnote{What you see is what you get},
+\emph{was eigentlich eher eine Drohung ist},
+muss man sich an die Philosopie von \LaTeX\ gewöhnen,
+wird aber durch die flexible und stabile Umgebung mit 
+hochwertigen Erzeugnissen belohnt. 
+
+\subsection{Features} \label{sec:features}
+
+Natürlich spielt \LaTeX\ seine Stärken gerade im 
+Satz mathematischer Formeln wie 
+$\sum_{i=1}^{n} i = \frac{n \cdot (n+1)}{2}$ 
+aus, die sowohl im Fließtext als auch abgesetzt 
+\begin{equation} \label{eq:gauss}
+\sum_{i=1}^{n} i = \frac{n \cdot (n+1)}{2}
+\end{equation}
+wie in Gleichung~(\ref{eq:gauss}) einwandfrei aussehen.
+
+\section{Inhalte}
+
+\begin{itemize}
+\item \LaTeX\-Features aus Abschnitt~\ref{sec:features} anhand
+eines einfaches Beispiels mit Texmaker unter Windows mit MiKTeX 
+oder Linux mit TeXLive.
+\item Idee und Grundprinzipien, Dokumente und Seitenstil,
+Texthervorhebungen, etc.\enspace.
+\end{itemize}
+
+\begin{thebibliography}{1}
+\bibitem[Knuth91]{bib:Knuth91}
+  Knuth, Donald E..:
+  \textit{Computers and Typesetting} Vol. A-E.
+  Addison-Wesley Co., Inc., Reading, MA, 1987-1991
+\end{thebibliography}
+\end{minipage}\mbox{\ \ \ }
+\begin{minipage}{77mm}
+\footnotesize
+\begin{verbatim}
+\begin{abstract}
+Bachelor- oder Seminararbeit schreiben und 
+keine Krise kurz vor der Abgabe haben? 
+Professionelles Layout und das alles 
+ganz automatisch?
+\LaTeX\ ist Ihre Wahl.
+\end{abstract}
+
+\section{Warum \LaTeX}
+
+\subsection{Dokumente im Buchdruckqualität}
+
+Das von Donald E. Knuth~\cite{bib:Knuth91} 
+entwickelte Programm \TeX\ ist das 
+leistungsfähigste Programm zur professionellen 
+Erstellung wissenschaftlicher und technischer 
+Texte wie Bachelor-Arbeiten und Seminararbeiten.
+
+Das auf \TeX\ basierte Paket \LaTeX\ erlaubt 
+es Autoren sich auf die Inhalte zu 
+konzentrieren. Im Gegensatz zu 
+WYSIWYG\footnote{What you see is what you get},
+\emph{was eigentlich eher eine Drohung ist},
+muss man sich an die Philosopie von \LaTeX\ 
+gewöhnen, wird aber durch die flexible und 
+stabile Umgebung mit hochwertigen 
+Erzeugnissen belohnt. 
+
+\subsection{Features} \label{sec:features}
+
+Natürlich spielt \LaTeX\ seine Stärken gerade im 
+Satz mathematischer Formeln wie 
+$\sum_{i=1}^{n} i = \frac{n \cdot (n+1)}{2}$ 
+aus, die sowohl im Fließtext als auch abgesetzt 
+\begin{equation} \label{eq:gauss}
+\sum_{i=1}^{n} i = \frac{n \cdot (n+1)}{2}
+\end{equation}
+wie in Gleichung~(\ref{eq:gauss}) einwandfrei 
+aussehen.
+
+
+\section{Inhalte}
+
+\begin{itemize}
+\item \LaTeX\-Features aus Abschnitt~\ref{sec:features} 
+anhand eines einfaches Beispiels mit Texmaker unter 
+Windows mit MiKTeX Linux mit TeXLive.
+\item Idee und Grundprinzipien, Dokumente und 
+Seitenstil, Texthervorhebungen, etc.\enspace.
+\end{itemize}
+
+
+
+\begin{thebibliography}{1}
+\bibitem[Knuth91]{bib:Knuth91}
+  Knuth, Donald E..:
+  \textit{Computers and Typesetting} Vol. A-E.
+  Addison-Wesley Co., Inc., Reading, MA, 1987-1991
+\end{thebibliography}
+
+\end{verbatim}
+\end{minipage}
+
+\end{document}

@@ -1,0 +1,40 @@
+% Logo von HS-RheinMain
+% wenn möglich mit pstricks - wenn pdflatex läuft,
+% dann durch inkludieren einer pdf-datei.
+
+%%% Überprüfen ob wir pdflatex laufen lassen
+\usepackage{ifpdf}
+
+\ifpdf
+% pgf-Logo für pdflatex, nicht so schön, aber ok
+\usepackage{tikz}
+\usepgflibrary{arrows}
+\usetikzlibrary{arrows}
+\newcommand{\hsrmlogo}[1][1]{%
+{
+\begin{tikzpicture}[line width=#1*7pt,scale=#1*0.1,>=round cap,color=black!70]
+\draw [<->] (2,1) -- (8,11.5);
+\draw [<->] (0,7.7) -- (13,7.7);
+\draw [<->] (2,14.5) -- (8,3.9);
+\end{tikzpicture}
+}}
+\else
+% mit PSTricks
+% \hsrmlogo an beliebiger Stelle im Text aufrufen
+% oder als \hsrmlogo[0.5] mit Skalierungsfaktor 
+% Achtung - Box ist kleiner als Ausgabe, gut für fancy-headings...
+\usepackage{pstricks} % sonst Fehler mit vaucanson-g
+%                     % nur eines der pstricks pakete benötigt
+\newcommand{\hsrmlogo}[1][1]{%
+{\setlength{\unitlength}{1mm}\setlength{\unitlength}{#1\unitlength}
+\psset{xunit=\unitlength}\psset{yunit=\unitlength}\psset{runit=\unitlength}
+\begin{picture}(15,16)
+\psset{linewidth=3}
+\psset{linecolor=gray}
+\psset{arrows=c-c}
+\psline(2,1)(8,11.5)
+\psline(0,7.7)(13,7.7)
+\psline(2,14.5)(8,3.9)
+\end{picture}
+}}
+\fi
